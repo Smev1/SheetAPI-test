@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Data</title>
+</head>
+<body>
+
+<div id="cellData"></div>
+
+<script>
+    // Replace 'YOUR_API_KEY' with your actual API key
+    const apiKey = 'AIzaSyCTLv7w6jZyjA9W6U4zhi16i7UB2rDyksU';
+    const sheetId = 'YOUR_SHEET_ID';
+    const range = 'Sheet1!A1'; // Replace with the desired cell reference
+
+    // Example API request URL
+    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/1Oc-H5MId3ln7B481LREsFpZoDAoU6QxVX4_XCr7gHqw/values/Sheet1?key=AIzaSyCTLv7w6jZyjA9W6U4zhi16i7UB2rDyksU`;
+
+    // Fetch data from Google Sheets API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const cellDataDiv = document.getElementById('cellData');
+
+            // Display data from the specific cell on the webpage
+            cellDataDiv.innerText = data.values[0][0];
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+
+</body>
+</html>
