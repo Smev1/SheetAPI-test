@@ -16,7 +16,7 @@
     const range = 'Sheet1!A1'; // Replace with the desired cell reference
 
     // Example API request URL
-    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/1Oc-H5MId3ln7B481LREsFpZoDAoU6QxVX4_XCr7gHqw/values/Sheet1?key=AIzaSyCTLv7w6jZyjA9W6U4zhi16i7UB2rDyksU`;
+    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
     // Fetch data from Google Sheets API
     fetch(apiUrl)
